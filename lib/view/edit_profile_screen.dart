@@ -33,7 +33,7 @@ class EditProfilePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
+        child: SingleChildScrollView (child: Column(
           children: [
             Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -189,7 +189,7 @@ class EditProfilePage extends StatelessWidget {
               ),
             ),
           ],
-        ),
+        ),),
       ),
     );
   }

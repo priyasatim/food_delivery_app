@@ -19,10 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
       "title": "Veg Mode",
     },
     {"icon": Icons.star, "title": "Show personalised ratings"},
-    {
-      "icon": Icons.star,
-      "title": "Appearance",
-    },
+    {"icon": Icons.star, "title": "Appearance"},
     {"icon": Icons.payment, "title": "Payment Methods"},
   ];
 
@@ -37,6 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
     super.initState();
     getUserData();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,12 +89,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => EditProfilePage(userName: userName),
+                                    builder: (context) =>
+                                        EditProfilePage(userName: userName),
                                   ),
                                 ).then((_) {
                                   getUserData();
                                 });
-                                },
+                              },
                               child: Text(
                                 "Edit Profile",
                                 style: TextStyle(
@@ -106,7 +105,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -116,7 +115,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   // Full-width Zomato Gold (no padding)
                   Container(
                     width: double.infinity,
-                    height: 48, // fixed height instead of padding
+                    height: 48,
+                    // fixed height instead of padding
                     decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.only(
@@ -125,18 +125,19 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     alignment: Alignment.centerLeft,
-                    child: Padding(padding: EdgeInsets.only(left:20),
-                    child: Text(
-                      "Join Zomato Gold",
-                      style: TextStyle(
-                        color: Colors.orange[200],
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: Text(
+                        "Join Zomato Gold",
+                        style: TextStyle(
+                          color: Colors.orange[200],
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    )
-                  )
-                    ],
+                  ),
+                ],
               ),
             ),
           ),
@@ -158,19 +159,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         SizedBox(height: 8),
-                        Text(
-                          "Zomato Money",
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
+                        Text("Zomato Money", style: TextStyle(fontSize: 12)),
                         SizedBox(height: 4),
                         Text(
                           "₹120", // amount
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.green,
-                          ),
+                          style: TextStyle(fontSize: 12, color: Colors.green),
                         ),
                       ],
                     ),
@@ -193,19 +186,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         SizedBox(height: 8),
-                        Text(
-                          "Your coupons",
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
+                        Text("Your coupons", style: TextStyle(fontSize: 12)),
                         SizedBox(height: 4),
                         Text(
                           "5", // number of orders
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.green,
-                          ),
+                          style: TextStyle(fontSize: 12, color: Colors.green),
                         ),
                       ],
                     ),
@@ -217,60 +202,76 @@ class _ProfilePageState extends State<ProfilePage> {
           SizedBox(height: 16),
 
           // Your Preferences
-          Padding(padding: EdgeInsetsGeometry.all(12),
-    child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            elevation: 4,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-
-                // Title
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    "Your Preferences",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
+          Container(
+            color: Colors.white,
+            child: Padding(
+              padding: EdgeInsetsGeometry.all(12),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
                 ),
+                elevation: 4,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      children: [
+                        Container(width: 3, height: 30, color: Colors.green),
 
-                Divider(height: 1, color: Colors.grey[300]),
+                        SizedBox(width: 8),
 
-                Column(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            "Your Preferences",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
 
+                    Divider(height: 1, color: Colors.grey[300]),
 
-                ListView.separated(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  padding: EdgeInsets.zero,
-                  itemCount: menuItems.length,
-                  separatorBuilder: (context, index) =>
-                      Divider(height: 1, color: Colors.grey[300]),
-                  itemBuilder: (context, index) {
-                    final item = menuItems[index];
-                    return ListTile(
-                      leading: Icon(item["icon"]),
-                      title: Text(item["title"],style: TextStyle(fontSize: 12,color: Colors.black)),
-                      trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                      onTap: () {
-                        print("Tapped ${item['title']}");
-                      },
-                    );
-                  },
-                ),  ],),
-              ],
+                    Column(
+                      children: [
+                        ListView.separated(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.zero,
+                          itemCount: menuItems.length,
+                          separatorBuilder: (context, index) =>
+                              Divider(height: 1, color: Colors.grey[300]),
+                          itemBuilder: (context, index) {
+                            final item = menuItems[index];
+                            return ListTile(
+                              leading: Icon(item["icon"]),
+                              title: Text(
+                                item["title"],
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 16),
+                              onTap: () {
+                                print("Tapped ${item['title']}");
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
           ),
           SizedBox(height: 16),
-
         ],
       ),
     );
@@ -286,5 +287,4 @@ class _ProfilePageState extends State<ProfilePage> {
       gender = prefs.getString("gender") ?? "";
     });
   }
-
 }

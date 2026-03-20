@@ -521,55 +521,89 @@ class _HomePageState extends State<HomePage> {
             bottom: 24,
             left: 16,
             right: 0,
-            child: Row(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Expanded(
-                  child: Container(
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(50),
-                      boxShadow: const [
-                        BoxShadow(color: Colors.black26, blurRadius: 10, offset: Offset(0, 3))
-                      ],
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        _bottomItem(Icons.home, "Home"),
-                        _bottomItem(Icons.local_offer, "Under ₹250"),
-                        _bottomItem(Icons.discount, "Offers"),
-                        _bottomItem(Icons.restaurant, "Dining"),
-                      ],
+                // Clickable text to open ViewCartPage
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ViewCartPage()),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                    child: Text(
+                      "View Cart",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange, // highlight as clickable
+                      ),
                     ),
                   ),
                 ),
 
-                const SizedBox(width: 12),
+                const SizedBox(height: 8),
 
-                // “Healthy Mode”
-                Container(
-                  height: 50,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                    color: Colors.green[700],
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(25),   // left side rounded
-                      bottomLeft: Radius.circular(25), // left side rounded
-                      topRight: Radius.circular(0),    // right side flat
-                      bottomRight: Radius.circular(0), // right side flat
+                // Existing bottom navigation row
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Colors.black26,
+                                blurRadius: 10,
+                                offset: Offset(0, 3))
+                          ],
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            _bottomItem(Icons.home, "Home"),
+                            _bottomItem(Icons.local_offer, "Under ₹250"),
+                            _bottomItem(Icons.discount, "Offers"),
+                            _bottomItem(Icons.restaurant, "Dining"),
+                          ],
+                        ),
+                      ),
                     ),
-                    boxShadow: const [
-                      BoxShadow(color: Colors.black26, blurRadius: 8, offset: Offset(0, 3)),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      _bottomItem(Icons.monitor_heart, "Healthy Mode"),
-                    ],
-                  ),                ),
+
+                    const SizedBox(width: 12),
+
+                    // Healthy Mode button
+                    Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.green[700],
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          bottomLeft: Radius.circular(25),
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 8,
+                              offset: Offset(0, 3)),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          _bottomItem(Icons.monitor_heart, "Healthy Mode"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           )

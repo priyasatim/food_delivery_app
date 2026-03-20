@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:zomato_app/database/CartService.dart';
 import 'package:zomato_app/view/home_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await CartService().init();
+
   runApp(const MyApp());
 }
 

@@ -3,10 +3,26 @@ import 'package:flutter/material.dart';
 
 import '/Widgets/DeliveryInfoRow.dart';
 import '../Widgets/QuantityBox.dart';
+import '../database/CartService.dart';
 
-class ViewCartPage extends StatelessWidget {
+class ViewCartPage extends StatefulWidget {
+
+  @override
+  _ViewCartPageState createState() => _ViewCartPageState();
+}
+
+class _ViewCartPageState extends State<ViewCartPage> {
+  List<Map<String, dynamic>> cartItems = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadCart();
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Color(0xFFF8F8F8),
       appBar: AppBar(
@@ -27,7 +43,7 @@ class ViewCartPage extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "The Spice House",
+                      cartItems[0]["restaurant"] as String,
                       style: TextStyle(color: Colors.grey[600], fontSize: 10),
                     ),
                   ],
@@ -137,6 +153,7 @@ class ViewCartPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
 
+
           // Order details
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
@@ -172,9 +189,19 @@ class ViewCartPage extends StatelessWidget {
                       ),
                       QuantityBox(
                         initialCount: 1,
-                        onChanged: (value) {
-                          print("Selected count: $value");
-                        },
+                        onChanged: (value) async {
+                          if (value == 0) {
+                            await CartService().removeProduct("1");
+                          } else {
+                            await CartService().addProduct(
+                              id: "1",
+                              name: "Margherita Pizza [6 Pieces]",
+                              price: 123,
+                              restaurant: "restaurant",
+                              location: "Mumbai",
+                            );
+                          }
+                          },
                       ),
                     ],
                   ),
@@ -472,5 +499,12 @@ class ViewCartPage extends StatelessWidget {
       //   ),
       // ),
     );
+  }
+
+  Future<void> loadCart() async {
+    List<Map<String, dynamic>> items = await CartService().getCartItems();
+    setState(() {
+      cartItems = items;
+    });
   }
 }

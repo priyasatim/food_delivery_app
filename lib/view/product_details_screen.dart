@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zomato_app/Widgets/QuantityBox.dart';
 
+import '../database/CartService.dart';
+
 class ProductDetailPage extends StatelessWidget {
    final Map<String, String> item;
 
@@ -13,21 +15,24 @@ class ProductDetailPage extends StatelessWidget {
       "name": "Margherita Pizza",
       "price": "₹250",
       "desc": "Cheese, Tomato, Basil",
-      "image": "assets/images/pizza.png"
+      "image": "assets/images/pizza.png",
+      "restaurant_name": "Dominos",
     },
     {
       "type": "Non-Veg",
       "name": "Chicken Burger",
       "price": "₹180",
       "desc": "Grilled Chicken with Cheese",
-      "image": "assets/images/burger.png"
+      "image": "assets/images/burger.png",
+      "restaurant_name": "MCD",
     },
     {
       "type": "Veg",
       "name": "French Fries",
       "price": "₹90",
       "desc": "Crispy Golden Fries",
-      "image": "assets/images/fries.png"
+      "image": "assets/images/fries.png",
+      "restaurant_name": "Dominos's",
     },
   ];
 
@@ -209,9 +214,15 @@ class ProductDetailPage extends StatelessWidget {
                                 bottom: 4, // a little padding from bottom
                                 child: QuantityBox(
                                   initialCount: 1,
-                                  onChanged: (value) {
-                                    print("Selected count: $value");
-                                  },
+                                  onChanged: (value) async {
+                                    await CartService().addProduct(
+                                      id:"1",
+                                      name: product["name"]!,
+                                      price: 300.0,
+                                      restaurant:  "Dominos",
+                                      location: "Mumbai",
+                                    );
+                                    },
                                 ),
                               ),
                             ],
