@@ -111,6 +111,8 @@ flutter:
      - assets/images/crowd_fav.jpg
      - assets/images/party_food.png
      - assets/images/gift_cards.png
+     - assets/images/credit-card.png
+     - assets/images/appearance.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
