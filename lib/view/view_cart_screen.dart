@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:zomato_app/Widgets/AppTextLink.dart';
-import 'package:zomato_app/Widgets/PaymentScreen.dart';
+import 'package:zomato_app/Widgets/app_text_link.dart';
+import 'package:zomato_app/Widgets/payment_screen.dart';
 import 'package:zomato_app/utility/app_colors.dart';
 
-import '/Widgets/DeliveryInfoRow.dart';
-import '../Widgets/QuantityBox.dart';
+import '/Widgets/delivery_info_row.dart';
+import '../Widgets/quantity_box.dart';
 import '../database/CartService.dart';
 
 class ViewCartPage extends StatefulWidget {

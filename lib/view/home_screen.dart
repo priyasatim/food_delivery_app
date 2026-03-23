@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zomato_app/Widgets/SliderPage.dart';
+import 'package:zomato_app/Widgets/slider_page.dart';
 import 'package:zomato_app/Widgets/app_circle_icon.dart';
 import 'package:zomato_app/Widgets/explore_more.dart';
 import 'package:zomato_app/bloc/category/categories_repository.dart';
@@ -12,8 +12,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../Widgets/BottomSheetScrollUI.dart';
-import '../Widgets/FilterBottomSheet.dart';
-import '../Widgets/RestaurantCard.dart';
+import '../Widgets/filter_bottom_sheet.dart';
+import '../Widgets/restaurant_card.dart';
 import '../Widgets/rating_badge.dart';
 import '../Widgets/veg_nonveg_toggle.dart';
 import '../bloc/category/category_bloc.dart';

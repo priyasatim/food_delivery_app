@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zomato_app/Utility/app_colors.dart';
-import 'package:zomato_app/Widgets/QuantityBox.dart';
+import 'package:zomato_app/Widgets/quantity_box.dart';
 import 'package:zomato_app/Widgets/rating_badge.dart';
 
 import '../Widgets/app_circle_icon.dart';
