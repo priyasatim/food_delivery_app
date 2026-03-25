@@ -47,6 +47,7 @@ dependencies:
   flutter_riverpod: ^3.2.1
   fluttertoast: ^8.2.4
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -114,6 +115,10 @@ flutter:
      - assets/images/gift_cards.png
      - assets/images/credit-card.png
      - assets/images/appearance.png
+       
+       # json data
+     - assets/json_data/food.json
+     - assets/json_data/category.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -42,6 +42,6 @@ class DBHelper {
   Future<List<Category>> getCategories() async {
     final db = await instance.database;
     final result = await db.query('categories');
-    return result.map((e) => Category.fromMap(e)).toList();
+    return result.map((e) => Category.fromJson(e)).toList();
   }
 }

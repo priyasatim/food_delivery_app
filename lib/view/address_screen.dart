@@ -51,7 +51,6 @@ class _LocationPageState extends State<LocationPage> {
       backgroundColor: Color(0xFFF8F8F8),
       appBar: AppBar(
         title: Text("Select Location"),
-        backgroundColor: Colors.orange,
       ),
       body: Column(
         children: [

@@ -83,21 +83,20 @@ class _MapAutoCompletePageState extends State<MapAutoCompletePage> {
             right: 16,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: const [
-                  BoxShadow(blurRadius: 5, color: Colors.black12),
-                ],
-              ),
               child: GooglePlaceAutoCompleteTextField(
+                containerHorizontalPadding: 0,
                 textEditingController: controller,
                 googleAPIKey: apiKey,
 
-                inputDecoration: const InputDecoration(
+                inputDecoration: InputDecoration(
                   hintText: "Search location...",
-                  border: InputBorder.none,
-                  prefixIcon: Icon(Icons.search),
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  ),
+                  prefixIcon: const Icon(Icons.search),
                 ),
 
                 debounceTime: 800,
@@ -140,10 +139,7 @@ class _MapAutoCompletePageState extends State<MapAutoCompletePage> {
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: const [
-                  BoxShadow(blurRadius: 5, color: Colors.black12),
-                ],
+                borderRadius: BorderRadius.circular(18),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

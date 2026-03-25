@@ -1,11 +1,10 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ExploreMoreScreen extends SliverPersistentHeaderDelegate {
-  final List<Map<String, String>> categories;
+  final List<Map<String, String>> explore;
 
-  ExploreMoreScreen(this.categories);
+  ExploreMoreScreen(this.explore);
 
   @override
   Widget build(
@@ -16,9 +15,9 @@ class ExploreMoreScreen extends SliverPersistentHeaderDelegate {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.symmetric(horizontal: 16),
-        itemCount: categories.length,
+        itemCount: explore.length,
         itemBuilder: (context, index) {
-          final cat = categories[index];
+          final cat = explore[index];
           return Container(
             width: 100,
             margin: EdgeInsets.only(right: 12),
@@ -32,7 +31,7 @@ class ExploreMoreScreen extends SliverPersistentHeaderDelegate {
                 Image.asset(cat["image"]!, width: 40, height: 40),
                 SizedBox(height: 4),
                 Text(
-                  cat["name"]!,
+                  cat["title"]!,
                   style: TextStyle(fontSize: 12),
                   textAlign: TextAlign.center,
                 ),

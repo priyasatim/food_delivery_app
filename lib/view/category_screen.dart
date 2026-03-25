@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CategoryScreen extends SliverPersistentHeaderDelegate {
   final List<Map<String, String>> categories;
-   int selectedIndex = 0;
+  final int selectedIndex = 0;
 
   CategoryScreen(this.categories);
 

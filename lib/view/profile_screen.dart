@@ -246,7 +246,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     padding: const EdgeInsets.all(6.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start, // 👈 important
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [

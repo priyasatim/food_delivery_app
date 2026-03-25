@@ -7,6 +7,7 @@ class RestaurantCard extends StatelessWidget {
   final String name;
   final String rating;
   final String time;
+  final String category;
 
   const RestaurantCard({
     super.key,
@@ -15,6 +16,7 @@ class RestaurantCard extends StatelessWidget {
     required this.name,
     required this.rating,
     required this.time,
+    required this.category,
   });
 
   @override

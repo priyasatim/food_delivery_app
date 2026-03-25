@@ -1,0 +1,30 @@
+[
+  {
+    "name": "All",
+    "image": "assets/images/all.png"
+  },
+  {
+    "name": "Burger",
+    "image": "assets/images/burger.png"
+  },
+  {
+    "name": "Pizza",
+    "image": "assets/images/pizza.png"
+  },
+  {
+    "name": "Cake",
+    "image": "assets/images/cake.png"
+  },
+  {
+    "name": "Fries",
+    "image": "assets/images/fries.png"
+  },
+  {
+    "name": "Chicken",
+    "image": "assets/images/chicken.png"
+  },
+  {
+    "name": "Waffle",
+    "image": "assets/images/waffle.png"
+  }
+]

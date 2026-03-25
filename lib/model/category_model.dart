@@ -11,7 +11,7 @@ class Category {
     'image': image,
   };
 
-  factory Category.fromMap(Map<String, dynamic> map) => Category(
+  factory Category.fromJson(Map<String, dynamic> map) => Category(
     id: map['id'],
     name: map['name'],
     image: map['image'],
