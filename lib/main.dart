@@ -28,6 +28,7 @@ Future<void> main() async {
               repository: CategoriesRepository(),
             )..add(LoadCategories()),
           ),
+
           BlocProvider(
             create: (_) => ExploreBloc(
               repository: ExploreRepository(),
