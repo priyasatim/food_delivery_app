@@ -25,8 +25,7 @@ class Bottomsheetscrollui extends StatelessWidget {
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeInOut,
 
-              bottom: baseBottom + (progress * 70),
-
+              bottom: baseBottom - (70 * progress),
               left: 12,
               right: 100,
 
@@ -46,7 +45,7 @@ class Bottomsheetscrollui extends StatelessWidget {
                 return Positioned(
                   bottom: baseBottom + (70 * (1 - value)),
                   left: 12,
-                  right: 10 + (value * 48), // ✅ now smooth
+                  right: 10 + (value * 48),
                   child: child!,
                 );
               },
