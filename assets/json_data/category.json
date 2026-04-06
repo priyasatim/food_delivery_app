@@ -1,30 +1,37 @@
 [
   {
     "name": "All",
-    "image": "assets/images/all.png"
+    "image": "assets/images/all.png",
+    "is_veg" : 1
   },
   {
     "name": "Burger",
-    "image": "assets/images/burger.png"
+    "image": "assets/images/burger.png",
+    "is_veg" : 1
   },
   {
     "name": "Pizza",
-    "image": "assets/images/pizza.png"
+    "image": "assets/images/pizza.png",
+    "is_veg" : 1
   },
   {
     "name": "Cake",
-    "image": "assets/images/cake.png"
+    "image": "assets/images/cake.png",
+    "is_veg" : 1
   },
   {
     "name": "Fries",
-    "image": "assets/images/fries.png"
+    "image": "assets/images/fries.png",
+    "is_veg" : 1
   },
   {
     "name": "Chicken",
-    "image": "assets/images/chicken.png"
-  },
+    "image": "assets/images/chicken.png",
+    "is_veg" : 0
+ },
   {
     "name": "Waffle",
-    "image": "assets/images/waffle.png"
+    "image": "assets/images/waffle.png",
+    "is_veg" : 1
   }
 ]

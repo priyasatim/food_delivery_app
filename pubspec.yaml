@@ -36,7 +36,6 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: 4.0.4
   flutter_bloc: ^8.1.2
-  sqflite: ^2.3.0
   path_provider: ^2.0.15
   geolocator: 14.0.2
   geocoding: ^2.1.0
@@ -46,6 +45,13 @@ dependencies:
   google_places_flutter: ^2.0.6
   flutter_riverpod: ^3.2.1
   fluttertoast: ^8.2.4
+  retrofit: ^4.9.0
+  logger: ^2.6.0
+  json_annotation: ^4.9.0
+  location: ^5.0.0
+  permission_handler: ^11.0.1
+  sqflite: ^2.3.0
+  path: ^1.8.3
   mockito: ^5.6.4
   equatable: ^2.0.5
   bloc_test: ^9.1.5
@@ -59,6 +65,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  retrofit_generator: ^10.0.1
+  build_runner: ^2.6.0
+  json_serializable: ^6.10.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -118,8 +127,9 @@ flutter:
      - assets/images/appearance.png
        
        # json data
-     - assets/json_data/food.json
+     - assets/json_data/restaurant.json
      - assets/json_data/category.json
+     - assets/json_data/restaurant_details.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

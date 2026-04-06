@@ -1,0 +1,45 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Dominos",
+      "location": "Mumbai",
+      "foods": [
+        {
+          "id": 101,
+          "title": "Burger",
+          "image": "assets/images/burger.jpg",
+          "time": "20-30 min",
+          "discount": "Flat ₹120 OFF above ₹299",
+          "category": "Burger",
+          "price": 122.0
+        },
+        {
+          "id": 102,
+          "title": "Pizza",
+          "image": "assets/images/pizza.jpg",
+          "time": "30-40 min",
+          "discount": "Flat ₹140 OFF above ₹299",
+          "category": "Pizza",
+          "price": 222.0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "South Indian",
+      "location": "Mumbai",
+      "foods": [
+        {
+          "id": 201,
+          "title": "Upma",
+          "image": "assets/images/upma.jpg",
+          "time": "30-40 min",
+          "discount": "Flat ₹140 OFF above ₹299",
+          "category": "Breakfast",
+          "price": 662.0
+        }
+      ]
+    }
+  ]
+}
